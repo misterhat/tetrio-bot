@@ -1,0 +1,31 @@
+{
+  "name": "tetrio-bot",
+  "version": "1.0.0",
+  "description": "bot to automatically play tetr.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterhat/tetrio-bot.git"
+  },
+  "keywords": [
+    "tetris",
+    "tetrio",
+    "bot",
+    "automatic",
+    "eltetris"
+  ],
+  "author": "Zorian Medwid <misterhat144@gmail.com>",
+  "license": "AGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/misterhat/tetrio-bot/issues"
+  },
+  "homepage": "https://github.com/misterhat/tetrio-bot#readme",
+  "dependencies": {
+    "average-colour": "^0.0.1",
+    "nearest-color": "^0.4.4",
+    "robotjs": "^0.6.0"
+  }
+}
