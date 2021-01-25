@@ -5,6 +5,8 @@ bot to automatically play https://tetr.io. utilizing a modified
 
 the bot automatically starts into zen mode and completes the first level.
 
+[![](./screenshot.png)](./demo.mp4)
+
 ## install
 
     $ sudo apt install xserver-xephyr libxtst-dev libpng++-dev python g++ make
