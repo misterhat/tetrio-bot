@@ -9,11 +9,13 @@ the bot automatically starts into zen mode and completes the first level.
 
 ## install
 
-    $ sudo apt install xserver-xephyr libxtst-dev libpng++-dev python g++ make
+    $ sudo apt install chromium xserver-xephyr libxtst-dev libpng++-dev python g++ make
     $ git clone https://github.com/misterhat/tetrio-bot
     $ cd tetrio-bot && npm install
 
 ## usage
+
+make sure the game quality is set to minimal for the best performance.
 
     $ ./tetrio.sh
 
