@@ -203,7 +203,7 @@ PIECES[0] = [
         orientation: [1, 1, 1, 1],
         width: 1,
         height: 4
-    },
+    }
 ];
 
 /**
@@ -216,14 +216,14 @@ PIECES[0] = [
  */
 PIECES[1] = [
     {
-        orientation: [parse('10'), parse('11'), parse('10')].reverse(),
-        width: 2,
-        height: 3
-    },
-    {
         orientation: [parse('010'), parse('111')].reverse(),
         width: 3,
         height: 2
+    },
+    {
+        orientation: [parse('10'), parse('11'), parse('10')].reverse(),
+        width: 2,
+        height: 3
     },
     {
         orientation: [parse('111'), parse('010')].reverse(),
@@ -267,7 +267,7 @@ PIECES[3] = [
         height: 2
     },
     {
-        orientation: [parse('01'), parse('01'), parse('11')].reverse(),
+        orientation: [parse('11'), parse('10'), parse('10')].reverse(),
         width: 2,
         height: 3
     },
@@ -277,7 +277,7 @@ PIECES[3] = [
         height: 2
     },
     {
-        orientation: [parse('11'), parse('10'), parse('10')].reverse(),
+        orientation: [parse('01'), parse('01'), parse('11')].reverse(),
         width: 2,
         height: 3
     }
@@ -293,7 +293,7 @@ PIECES[3] = [
  */
 PIECES[4] = [
     {
-        orientation: [parse('111'), parse('100')].reverse(),
+        orientation: [parse('001'), parse('111')].reverse(),
         width: 3,
         height: 2
     },
@@ -303,7 +303,7 @@ PIECES[4] = [
         height: 3
     },
     {
-        orientation: [parse('001'), parse('111')].reverse(),
+        orientation: [parse('111'), parse('100')].reverse(),
         width: 3,
         height: 2
     },
@@ -324,14 +324,14 @@ PIECES[4] = [
  */
 PIECES[5] = [
     {
-        orientation: [parse('10'), parse('11'), parse('01')].reverse(),
-        width: 2,
-        height: 3
-    },
-    {
         orientation: [parse('011'), parse('110')].reverse(),
         width: 3,
         height: 2
+    },
+    {
+        orientation: [parse('10'), parse('11'), parse('01')].reverse(),
+        width: 2,
+        height: 3
     }
 ];
 
@@ -345,14 +345,14 @@ PIECES[5] = [
  */
 PIECES[6] = [
     {
-        orientation: [parse('01'), parse('11'), parse('10')].reverse(),
-        width: 2,
-        height: 3
-    },
-    {
         orientation: [parse('110'), parse('011')].reverse(),
         width: 3,
         height: 2
+    },
+    {
+        orientation: [parse('01'), parse('11'), parse('10')].reverse(),
+        width: 2,
+        height: 3
     }
 ];
 
@@ -560,4 +560,25 @@ ElTetris.prototype.getRandomPiece = function () {
     return PIECES[this.getRandomPieceIndex()];
 };
 
+function drawRow(rowNumber, rowValue) {
+    for (var i = 0; i < 10 && rowValue !== 0; i++) {
+        if (rowValue & 1) {
+            process.stdout.write('x');
+        } else {
+            process.stdout.write('-');
+        }
+
+        rowValue = rowValue >> 1;
+    }
+}
+
+function drawBoard(board) {
+    // Fill cells
+    for (let row = 10; row >= 0; row--) {
+        drawRow(row, board[row]);
+        console.log();
+    }
+}
+
+ElTetris.drawBoard = drawBoard;
 module.exports = ElTetris;
