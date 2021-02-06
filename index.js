@@ -18,11 +18,11 @@ const NEXT_PIECE_COUNT = 5;
 const JOIN_X = 400;
 const JOIN_Y = 430;
 
-const SOLO_X = 470;
-const SOLO_Y = 320;
+const SOLO_X = 300;
+const SOLO_Y = 420;
 
-const ZEN_X = 470;
-const ZEN_Y = 440;
+const ZEN_X = 300;
+const ZEN_Y = 450;
 
 const START_X = 592;
 const START_Y = 324;
@@ -68,7 +68,6 @@ function getLuminence(colour) {
     const g = Number.parseInt(colour.slice(2, 4), 16);
     const b = Number.parseInt(colour.slice(4, 6), 16);
 
-    //console.log(colour, (0.2126*r + 0.7152*g + 0.0722*b));
     return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
@@ -91,19 +90,19 @@ class TetrioBot {
     // click through the menus to start zen mode
     async startGame() {
         // join as guest
-        robot.moveMouse(JOIN_X, JOIN_Y);
+        robot.moveMouseSmooth(JOIN_X, JOIN_Y);
         robot.mouseClick();
 
         await sleep(1200);
 
         // click solo
-        robot.moveMouse(SOLO_X, SOLO_Y);
+        robot.moveMouseSmooth(SOLO_X, SOLO_Y);
         robot.mouseClick();
 
         await sleep(1200);
 
         // click zen
-        robot.moveMouse(ZEN_X, ZEN_Y);
+        robot.moveMouseSmooth(ZEN_X, ZEN_Y);
         robot.mouseClick();
 
         await sleep(1200);
@@ -118,7 +117,7 @@ class TetrioBot {
         this.currentPieces = this.getNextPieces();
         this.getNextPiece();
 
-        // wait until countdown is finished
+        // wait until countdown is finished*/
         await sleep(1800);
     }
 
