@@ -9,9 +9,21 @@ the bot automatically starts into zen mode and completes the first level.
 
 ## install
 
+### debian/ubuntu-based
+
     $ sudo apt install chromium xserver-xephyr libxtst-dev libpng++-dev python g++ make
+    $ curl -fsSL https://get.pnpm.io/install.sh | sh -
+    $ pnpm env use --global lts
     $ git clone https://github.com/misterhat/tetrio-bot
-    $ cd tetrio-bot && npm install
+    $ cd tetrio-bot && pnpm i
+
+### arch-based
+
+    $ sudo pacman -Syu chromium xorg-server-xephyr libxtst libpng python gcc make
+    $ curl -fsSL https://get.pnpm.io/install.sh | sh -
+    $ pnpm env use --global lts
+    $ git clone https://github.com/misterhat/tetrio-bot
+    $ cd tetrio-bot && pnpm i
 
 ## usage
 
