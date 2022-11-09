@@ -154,12 +154,13 @@ class TetrioBot {
                 colours.push(`#${colour}`);
             }
 
-            console.log(
-                nearestColour(averageColour(colours)).name,
-                averageColour(colours)
-            );
+            if (colours.length > 0) {
+                let average = averageColour(colours);
+                let nearestAverageColour = nearestColour(average);
+                console.log(nearestAverageColour.name, average);
 
-            pieces.push(nearestColour(averageColour(colours)).name);
+                pieces.push(nearestAverageColour.name);
+            }
         }
 
         //spawn('import', ['-w', 'root', `./screenshot-${pieces.join(',')}.png`]);
